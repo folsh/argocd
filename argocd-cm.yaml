@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cm
+  namespace: argocd
+  labels:
+    app.kubernetes.io/name: argocd-cm
+    app.kubernetes.io/part-of: argocd
+data:
+  # add a local user with apiKey and login capabilities
+  #   apiKey - allows generating API keys
+  #   login - allows to login using UI
+
+  server.rbac.log.enforce.enable: "true"
+
+  accounts.CeeAhuja: apiKey, login
+  accounts.CeeAhuja.enabled: "true"
+
+  accounts.LaVorce: apiKey, login
+  accounts.LaVorce.enabled: "true"
+
+  accounts.jaminUavre: apiKey, login
+  accounts.jaminUavre.enabled: "true"
+
+  accounts.roRvM: apiKey, login
+  accounts.roRvM.enabled: "true"
+
+  accounts.cedChi: apiKey, login
+  accounts.cedChi.enabled: "true"
+
+  accounts.pedAujo: apiKey, login
+  accounts.pedAujo.enabled: "true"
+
+  accounts.brunEira: apiKey, login
+  accounts.brunEira.enabled: "true"
+
+  accounts.visitor: apiKey, login
+  accounts.visitor.enable: "true"
+
+  # disables user. User is enabled by default
+  accounts.admin.enabled: "false"
